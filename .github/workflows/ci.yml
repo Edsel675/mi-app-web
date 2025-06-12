@@ -14,17 +14,6 @@ jobs:
     - name: Checkout código
       uses: actions/checkout@v4
 
-    - name: Instalar Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-
-    - name: Instalar dependencias
+    - name: Simular pruebas
       run: |
-        npm install
-        echo "No hay dependencias por ahora"
-
-    - name: Ejecutar pruebas (simuladas)
-      run: |
-        echo "Ejecutando pruebas ficticias"
-        echo "OK - Todas las pruebas pasaron"
+        echo "No hay tests aún, pipeline OK."
