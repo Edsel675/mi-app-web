@@ -13,21 +13,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Configurar Git
-        run: |
-          git config --global user.email "edsel675@example.com"
-          git config --global user.name "Edsel675"
-
-      - name: Build and Deploy
-        run: npm run deploy
-
-      - name: Final Message
-        run: echo "🚀 Deploy automático completo en GitHub Pages"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .   # en tu caso es correcto, porque index.html está en el root
